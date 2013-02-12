@@ -1,0 +1,11 @@
+eclipse.preferences.version=1
+environment/project/org.eclipse.cdt.cross.arm.gnu.yagarto.macosx.elf.debug.1214824166/PATH/delimiter=\:
+environment/project/org.eclipse.cdt.cross.arm.gnu.yagarto.macosx.elf.debug.1214824166/PATH/operation=replace
+environment/project/org.eclipse.cdt.cross.arm.gnu.yagarto.macosx.elf.debug.1214824166/PATH/value=/usr/bin\:/bin\:/usr/sbin\:/sbin\:/Users/chuankai/bin/yagarto-4.6.2/bin\:/Users/chuankai/bin/yagarto-4.6.2/tools
+environment/project/org.eclipse.cdt.cross.arm.gnu.yagarto.macosx.elf.debug.1214824166/append=true
+environment/project/org.eclipse.cdt.cross.arm.gnu.yagarto.macosx.elf.debug.1214824166/appendContributed=true
+environment/project/org.eclipse.cdt.cross.arm.gnu.yagarto.macosx.elf.release.828935012/PATH/delimiter=\:
+environment/project/org.eclipse.cdt.cross.arm.gnu.yagarto.macosx.elf.release.828935012/PATH/operation=append
+environment/project/org.eclipse.cdt.cross.arm.gnu.yagarto.macosx.elf.release.828935012/PATH/value=/Users/chuankai/bin/yagarto-4.7.2/bin\:/Users/chuankai/bin/yagarto-4.7.2/tools
+environment/project/org.eclipse.cdt.cross.arm.gnu.yagarto.macosx.elf.release.828935012/append=true
+environment/project/org.eclipse.cdt.cross.arm.gnu.yagarto.macosx.elf.release.828935012/appendContributed=true
