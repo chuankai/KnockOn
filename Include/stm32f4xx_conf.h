@@ -1,9 +1,9 @@
 /**
   ******************************************************************************
-  * @file    IO_Toggle/stm32f4xx_conf.h  
+  * @file    Audio_playback_and_record/inc/stm32f40x_conf.h   
   * @author  MCD Application Team
   * @version V1.0.0
-  * @date    19-September-2011
+  * @date    28-October-2011
   * @brief   Library configuration file.
   ******************************************************************************
   * @attention
@@ -20,8 +20,8 @@
   */ 
 
 /* Define to prevent recursive inclusion -------------------------------------*/
-#ifndef __STM32F4xx_CONF_H
-#define __STM32F4xx_CONF_H
+#ifndef __STM32F40x_CONF_H
+#define __STM32F40x_CONF_H
 
 #if defined  (HSE_VALUE)
 /* Redefine the HSE value; it's equal to 8 MHz on the STM32F4-DISCOVERY Kit */
@@ -89,6 +89,6 @@
   #define assert_param(expr) ((void)0)
 #endif /* USE_FULL_ASSERT */
 
-#endif /* __STM32F4xx_CONF_H */
+#endif /* __STM32F40x_CONF_H */
 
 /******************* (C) COPYRIGHT 2011 STMicroelectronics *****END OF FILE****/

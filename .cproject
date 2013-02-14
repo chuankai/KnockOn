@@ -29,14 +29,27 @@
 							<tool id="org.eclipse.cdt.cross.arm.gnu.yagarto.macosx.elf.c.compiler.debug.639522422" name="ARM Yagarto Mac OS X GCC C Compiler" superClass="org.eclipse.cdt.cross.arm.gnu.yagarto.macosx.elf.c.compiler.debug">
 								<option id="org.eclipse.cdt.cross.arm.gnu.c.compiler.option.optimization.level.1660472827" name="Optimization level" superClass="org.eclipse.cdt.cross.arm.gnu.c.compiler.option.optimization.level" value="org.eclipse.cdt.cross.arm.gnu.base.option.optimization.level.none" valueType="enumerated"/>
 								<option id="org.eclipse.cdt.cross.arm.gnu.c.compiler.option.include.paths.1543054531" name="Include paths (-I)" superClass="org.eclipse.cdt.cross.arm.gnu.c.compiler.option.include.paths" valueType="includePath">
-									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/${ProjName}/Libraries/CMSIS/Include}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/${ProjName}/Include}&quot;"/>
 									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/${ProjName}/Utilities/STM32F4-Discovery}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/${ProjName}/Libraries/CMSIS/Include}&quot;"/>
 									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/${ProjName}/Libraries/CMSIS/ST/STM32F4xx/Include}&quot;"/>
 									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/${ProjName}/Libraries/STM32F4xx_StdPeriph_Driver/inc}&quot;"/>
-									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/${ProjName}/Source}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/${ProjName}/Libraries/STM32_USB_Device_Library/Class/audio/inc}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/${ProjName}/Libraries/STM32_USB_Device_Library/Class/cdc/inc}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/${ProjName}/Libraries/STM32_USB_Device_Library/Class/dfu/inc}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/${ProjName}/Libraries/STM32_USB_Device_Library/Class/hid/inc}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/${ProjName}/Libraries/STM32_USB_Device_Library/Core/inc}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/${ProjName}/Libraries/STM32_USB_Device_Library/Class/msc/inc}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/${ProjName}/Libraries/STM32_USB_HOST_Library/Class/HID/inc}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/${ProjName}/Libraries/STM32_USB_HOST_Library/Class/MSC/inc}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/${ProjName}/Libraries/STM32_USB_HOST_Library/Core/inc}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/${ProjName}/Libraries/STM32_USB_OTG_Driver/inc}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/${ProjName}/Utilities/Third_Party/fat_fs/inc}&quot;"/>
 								</option>
 								<option id="org.eclipse.cdt.cross.arm.gnu.c.compiler.option.preprocessor.def.2083120812" name="Defined symbols (-D)" superClass="org.eclipse.cdt.cross.arm.gnu.c.compiler.option.preprocessor.def" valueType="definedSymbols">
 									<listOptionValue builtIn="false" value="STM32F4XX"/>
+									<listOptionValue builtIn="false" value="USE_USB_OTG_FS"/>
+									<listOptionValue builtIn="false" value="MEDIA_USB_KEY"/>
 									<listOptionValue builtIn="false" value="ARM_MATH_CM4"/>
 									<listOptionValue builtIn="false" value="USE_STDPERIPH_DRIVER"/>
 								</option>
@@ -46,11 +59,17 @@
 								<option id="org.eclipse.cdt.cross.arm.gnu.cpp.compiler.option.optimization.level.545656203" name="Optimization level" superClass="org.eclipse.cdt.cross.arm.gnu.cpp.compiler.option.optimization.level" value="org.eclipse.cdt.cross.arm.gnu.base.option.optimization.level.none" valueType="enumerated"/>
 							</tool>
 							<tool id="org.eclipse.cdt.cross.arm.gnu.yagarto.macosx.elf.c.linker.debug.1813697885" name="ARM Yagarto Mac OS X GCC C Linker" superClass="org.eclipse.cdt.cross.arm.gnu.yagarto.macosx.elf.c.linker.debug">
-								<option id="org.eclipse.cdt.cross.arm.gnu.c.link.option.scriptfile.975742976" name="Script file (-T)" superClass="org.eclipse.cdt.cross.arm.gnu.c.link.option.scriptfile" value="/Users/chuankai/workshop/eclipse/stm32_workspace/hello/stm32_flash.ld" valueType="string"/>
+								<option id="org.eclipse.cdt.cross.arm.gnu.c.link.option.scriptfile.975742976" name="Script file (-T)" superClass="org.eclipse.cdt.cross.arm.gnu.c.link.option.scriptfile" value="&quot;${workspace_loc:/${ProjName}/stm32_flash.ld}&quot;" valueType="string"/>
 								<option id="org.eclipse.cdt.cross.arm.gnu.c.link.option.gcsections.140426112" name="Remove unused sections (-Xlinker --gc-sections)" superClass="org.eclipse.cdt.cross.arm.gnu.c.link.option.gcsections" value="true" valueType="boolean"/>
 								<option id="org.eclipse.cdt.cross.arm.gnu.c.link.option.nostart.182287465" name="Do not use standard start files (-nostartfiles)" superClass="org.eclipse.cdt.cross.arm.gnu.c.link.option.nostart" value="false" valueType="boolean"/>
 								<option id="org.eclipse.cdt.cross.arm.gnu.c.link.option.nostdlibs.1852083185" name="No startup or default libs (-nostdlib)" superClass="org.eclipse.cdt.cross.arm.gnu.c.link.option.nostdlibs" value="false" valueType="boolean"/>
 								<option id="org.eclipse.cdt.cross.arm.gnu.c.link.option.nodeflibs.979854582" name="Do not use default libraries (-nodefaultlibs)" superClass="org.eclipse.cdt.cross.arm.gnu.c.link.option.nodeflibs" value="false" valueType="boolean"/>
+								<option id="org.eclipse.cdt.cross.arm.gnu.c.link.option.paths.263691639" name="Library search path (-L)" superClass="org.eclipse.cdt.cross.arm.gnu.c.link.option.paths" valueType="libPaths">
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/${ProjName}/Utilities/STM32F4-Discovery}&quot;"/>
+								</option>
+								<option id="org.eclipse.cdt.cross.arm.gnu.c.link.option.libs.537972556" name="Libraries (-l)" superClass="org.eclipse.cdt.cross.arm.gnu.c.link.option.libs" valueType="libs">
+									<listOptionValue builtIn="false" value="PDMFilter_GCC"/>
+								</option>
 								<inputType id="org.eclipse.cdt.cross.arm.gnu.c.linker.input.1197127701" superClass="org.eclipse.cdt.cross.arm.gnu.c.linker.input">
 									<additionalInput kind="additionalinputdependency" paths="$(USER_OBJS)"/>
 									<additionalInput kind="additionalinput" paths="$(LIBS)"/>
@@ -223,8 +242,29 @@
 							<tool id="org.eclipse.cdt.cross.arm.gnu.yagarto.macosx.elf.printsize.debug.842868060" name="ARM Yagarto Mac OS X GNU Print Size" superClass="org.eclipse.cdt.cross.arm.gnu.yagarto.macosx.elf.printsize.debug.204087337"/>
 						</toolChain>
 					</folderInfo>
+					<folderInfo id="org.eclipse.cdt.cross.arm.gnu.yagarto.macosx.elf.debug.1214824166.761963737" name="/" resourcePath="Utilities/Third_Party/fat_fs/src/option">
+						<toolChain id="org.eclipse.cdt.cross.arm.gnu.yagarto.macosx.elf.toolchain.debug.983983649" name="ARM Mac OS X GCC (Yagarto)" superClass="org.eclipse.cdt.cross.arm.gnu.yagarto.macosx.elf.toolchain.debug" unusedChildren="">
+							<option id="org.eclipse.cdt.cross.arm.gnu.yagarto.macosx.option.debugging.level.1109105251.1033241142.96941874" name="Debug level" superClass="org.eclipse.cdt.cross.arm.gnu.yagarto.macosx.option.debugging.level.1109105251.1033241142"/>
+							<option id="org.eclipse.cdt.cross.arm.gnu.yagarto.macosx.option.debugging.level.1428898977.553996434" name="Debug level" superClass="org.eclipse.cdt.cross.arm.gnu.yagarto.macosx.option.debugging.level.1428898977"/>
+							<option id="org.eclipse.cdt.cross.arm.gnu.yagarto.macosx.option.debugging.level.1554585643" name="Debug level" superClass="org.eclipse.cdt.cross.arm.gnu.yagarto.macosx.option.debugging.level" value="org.eclipse.cdt.cross.arm.gnu.base.option.debugging.level.max" valueType="enumerated"/>
+							<targetPlatform id="org.eclipse.cdt.cross.arm.gnu.yagarto.macosx.elf.platform.debug" isAbstract="false" name="Mac OS X Platform" superClass="org.eclipse.cdt.cross.arm.gnu.yagarto.macosx.elf.platform.debug"/>
+							<tool id="org.eclipse.cdt.cross.arm.gnu.yagarto.macosx.elf.assembler.debug.1165788105" name="ARM Yagarto Mac OS X GCC Assembler" superClass="org.eclipse.cdt.cross.arm.gnu.yagarto.macosx.elf.assembler.debug.1874081222">
+								<inputType id="org.eclipse.cdt.cross.arm.gnu.yagarto.macosx.assembler.base.input.30244360" superClass="org.eclipse.cdt.cross.arm.gnu.yagarto.macosx.assembler.base.input"/>
+							</tool>
+							<tool id="org.eclipse.cdt.cross.arm.gnu.yagarto.macosx.elf.c.compiler.debug.1916878480" name="ARM Yagarto Mac OS X GCC C Compiler" superClass="org.eclipse.cdt.cross.arm.gnu.yagarto.macosx.elf.c.compiler.debug.1153858773">
+								<inputType id="org.eclipse.cdt.cross.arm.gnu.yagarto.macosx.c.compiler.base.input.324089333" superClass="org.eclipse.cdt.cross.arm.gnu.yagarto.macosx.c.compiler.base.input"/>
+							</tool>
+							<tool id="org.eclipse.cdt.cross.arm.gnu.yagarto.macosx.elf.cpp.compiler.debug.1951044054" name="ARM Yagarto Mac OS X GCC C++ Compiler" superClass="org.eclipse.cdt.cross.arm.gnu.yagarto.macosx.elf.cpp.compiler.debug.1472661065"/>
+							<tool id="org.eclipse.cdt.cross.arm.gnu.yagarto.macosx.elf.c.linker.debug.2132720591" name="ARM Yagarto Mac OS X GCC C Linker" superClass="org.eclipse.cdt.cross.arm.gnu.yagarto.macosx.elf.c.linker.debug.2042009604"/>
+							<tool id="org.eclipse.cdt.cross.arm.gnu.yagarto.macosx.elf.cpp.linker.debug.1662541664" name="ARM Yagarto Mac OS X GCC C++ Linker" superClass="org.eclipse.cdt.cross.arm.gnu.yagarto.macosx.elf.cpp.linker.debug.542791181"/>
+							<tool id="org.eclipse.cdt.cross.arm.gnu.yagarto.macosx.archiver.base.1189016759" name="ARM Yagarto Mac OS X GCC Archiver" superClass="org.eclipse.cdt.cross.arm.gnu.yagarto.macosx.archiver.base.1126179198"/>
+							<tool id="org.eclipse.cdt.cross.arm.gnu.yagarto.macosx.elf.createflash.debug.1114523513" name="ARM Yagarto Mac OS X GNU Create Flash Image" superClass="org.eclipse.cdt.cross.arm.gnu.yagarto.macosx.elf.createflash.debug.528456073"/>
+							<tool id="org.eclipse.cdt.cross.arm.gnu.yagarto.macosx.elf.createlisting.debug.1114561806" name="ARM Yagarto Mac OS X GNU Create Listing" superClass="org.eclipse.cdt.cross.arm.gnu.yagarto.macosx.elf.createlisting.debug.532175007"/>
+							<tool id="org.eclipse.cdt.cross.arm.gnu.yagarto.macosx.elf.printsize.debug.151210223" name="ARM Yagarto Mac OS X GNU Print Size" superClass="org.eclipse.cdt.cross.arm.gnu.yagarto.macosx.elf.printsize.debug.842868060"/>
+						</toolChain>
+					</folderInfo>
 					<sourceEntries>
-						<entry excluding="Libraries/CMSIS/ST/STM32F4xx/Source/Templates/system_stm32f4xx.c|Utilities/STM32F4-Discovery/stm32f4_discovery_lis302dl.c|Utilities/STM32F4-Discovery/stm32f4_discovery_audio_codec.c|Libraries/STM32_USB_HOST_Library|Libraries/STM32_USB_OTG_Driver|Libraries/STM32_USB_Device_Library|Libraries/STM32_USB_OTG_Driver/src/usb_bsp_template.c|Utilities/Third_Party|Libraries/CMSIS/Documentation" flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name=""/>
+						<entry excluding="Utilities/Third_Party/fat_fs/src/diskio.c|Utilities/Third_Party/fat_fs/src/option|Libraries/STM32_USB_OTG_Driver/src/usb_dcd_int.c|Libraries/STM32_USB_OTG_Driver/src/usb_dcd.c|Libraries/STM32_USB_Device_Library|Libraries/CMSIS/ST/STM32F4xx/Source/Templates/system_stm32f4xx.c|Libraries/STM32_USB_OTG_Driver/src/usb_bsp_template.c|Libraries/CMSIS/Documentation" flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name=""/>
 					</sourceEntries>
 				</configuration>
 			</storageModule>
