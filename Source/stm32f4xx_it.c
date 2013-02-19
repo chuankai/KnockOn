@@ -170,8 +170,6 @@ void TIM4_IRQHandler(void)
   if (TIM_GetITStatus(TIM4, TIM_IT_CC1) != RESET)
   {
     TIM_ClearITPendingBit(TIM4, TIM_IT_CC1);
-      /* LED3 Orange toggling */
-      STM_EVAL_LEDToggle(LED3);
   }
 }
 
