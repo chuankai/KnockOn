@@ -185,8 +185,9 @@ void EXTI0_IRQHandler(void)
 {
   /* Checks whether the User Button EXTI line is asserted*/
   if (EXTI_GetITStatus(EXTI_Line0) != RESET) 
-  { 
-  } 
+  {
+	  STM_EVAL_LEDToggle(LED4);
+  }
   /* Clears the EXTI's line pending bit.*/ 
   EXTI_ClearITPendingBit(EXTI_Line0);
 }

@@ -29,7 +29,7 @@
 /* Private define ------------------------------------------------------------*/
 /* Private variables ---------------------------------------------------------*/
 RCC_ClocksTypeDef RCC_Clocks;
-__IO uint16_t CCR_Val = 16826;
+uint16_t CCR_Val = 8000;
 
 /* Private function prototypes -----------------------------------------------*/
 static void TIM_LED_Config(void);
@@ -50,9 +50,6 @@ int main(void)
  
   /* Green Led On: start of application */
   STM_EVAL_LEDOn(LED4);
-  STM_EVAL_LEDOn(LED5);
-  STM_EVAL_LEDOff(LED4);
-  STM_EVAL_LEDOff(LED5);
 
   /* SysTick end of count event each 10ms */
   RCC_GetClocksFreq(&RCC_Clocks);
@@ -64,6 +61,8 @@ int main(void)
   /* Initialize User Button */
   STM_EVAL_PBInit(BUTTON_USER, BUTTON_MODE_EXTI);
   
+ while (1);
+
   return 0;
 }
 
