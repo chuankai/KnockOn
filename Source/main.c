@@ -28,15 +28,8 @@
 /* Private typedef -----------------------------------------------------------*/
 /* Private define ------------------------------------------------------------*/
 /* Private variables ---------------------------------------------------------*/
-#if defined MEDIA_USB_KEY
- USB_OTG_CORE_HANDLE          USB_OTG_Core;
- USBH_HOST                    USB_Host;
-#endif
-
 RCC_ClocksTypeDef RCC_Clocks;
-__IO uint8_t RepeatState = 0;
 __IO uint16_t CCR_Val = 16826;
-extern __IO uint8_t LED_Toggle;
 
 /* Private function prototypes -----------------------------------------------*/
 static void TIM_LED_Config(void);
@@ -57,7 +50,10 @@ int main(void)
  
   /* Green Led On: start of application */
   STM_EVAL_LEDOn(LED4);
-       
+  STM_EVAL_LEDOn(LED5);
+  STM_EVAL_LEDOff(LED4);
+  STM_EVAL_LEDOff(LED5);
+
   /* SysTick end of count event each 10ms */
   RCC_GetClocksFreq(&RCC_Clocks);
   SysTick_Config(RCC_Clocks.HCLK_Frequency / 100);
@@ -65,31 +61,10 @@ int main(void)
   /* Configure TIM4 Peripheral to manage LEDs lighting */
   TIM_LED_Config();
   
-  /* Initialize the repeat status */
-  RepeatState = 0;
-  LED_Toggle = 7;
-  
-#if defined MEDIA_IntFLASH
-  
-  WavePlayBack(I2S_AudioFreq_48k); 
-  while (1);
-  
-#elif defined MEDIA_USB_KEY
-  
   /* Initialize User Button */
   STM_EVAL_PBInit(BUTTON_USER, BUTTON_MODE_EXTI);
-   
-  /* Init Host Library */
-  USBH_Init(&USB_OTG_Core, USB_OTG_FS_CORE_ID, &USB_Host, &USBH_MSC_cb, &USR_Callbacks);
   
-  while (1)
-  {
-    /* Host Task handler */
-    USBH_Process(&USB_OTG_Core, &USB_Host);
-  }
-  
-#endif
-  
+  return 0;
 }
 
 /**
