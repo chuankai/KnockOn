@@ -20,6 +20,7 @@
 
 /* Includes ------------------------------------------------------------------*/
 #include "main.h"
+#include "arm_math.h"
 
 /** @addtogroup STM32F4-Discovery_Audio_Player_Recorder
  * @{
@@ -56,6 +57,8 @@ static uint32_t InternalBufferSize = 0;
 PDMFilter_InitStruct Filter;
 
 uint16_t RecBuf[PCM_OUT_SIZE];
+
+float32_t RecBuff32[PCM_OUT_SIZE];
 
 uint16_t PCMBufOffset = 0;
 
@@ -159,6 +162,30 @@ void WaveCaptureStop(void)
 	I2S_Cmd(SPI2, DISABLE);
 }
 
+float32_t FFTOutput[PCM_OUT_SIZE / 2];
+uint8_t RecognizeSignal(void)
+{
+	uint16_t i;
+	arm_cfft_radix4_instance_f32 S; 
+	float32_t maxValue;
+	uint32_t indexOfMax;
+
+	for (i = 0; i < PCM_OUT_SIZE; i++)
+	{
+		RecBuff32[i] = (float32_t) (RecBuf[i] - (1UL << 15)) / (float32_t) (1UL << 15);
+		//RecBuff32[i] = 10.0;// * (float32_t) (i % 2 ? 1 : -1);
+	}
+	arm_cfft_radix4_init_f32(&S, PCM_OUT_SIZE,  0, 1);
+	arm_cfft_radix4_f32(&S, RecBuff32);
+	arm_cmplx_mag_f32(RecBuff32, FFTOutput,  PCM_OUT_SIZE);
+	arm_max_f32(FFTOutput, PCM_OUT_SIZE, &maxValue, &indexOfMax);
+	
+	if (maxValue > 15 && 10 < indexOfMax && indexOfMax < 30)
+		return 1;
+	else
+		return 0;
+}
+
 int main(void)
 {
 	/* Initialize LEDS */
@@ -186,7 +213,9 @@ int main(void)
 		{
 			CaptureComplete = 0;
 			WaveCaptureStop();
-			//Analyse the knock
+
+			if (RecognizeSignal() == 1)
+				STM_EVAL_LEDToggle(LED4);
 			WaveCaptureStart();
 		}
 	}
