@@ -19,14 +19,22 @@
  */
 
 /* Includes ------------------------------------------------------------------*/
+#include <string.h>
 #include "main.h"
-#include "arm_math.h"
 
 /** @addtogroup STM32F4-Discovery_Audio_Player_Recorder
  * @{
  */
 
 /* Private typedef -----------------------------------------------------------*/
+enum bufstatus
+{
+	UPDATING,
+	UPDATED,
+	PROCESSING,
+	PROCESSED
+};
+
 /* Private define ------------------------------------------------------------*/
 /* SPI Configuration defines */
 #define SPI_SCK_PIN                       GPIO_Pin_10
@@ -41,28 +49,27 @@
 #define SPI_MOSI_SOURCE                   GPIO_PinSource3
 #define SPI_MOSI_AF                       GPIO_AF_SPI2
 
-#define INTERNAL_BUFF_SIZE      64
+#define PDM_BUFF_SIZE      64
 #define PCM_DECIMATION_SIZE	16
-#define PCM_OUT_SIZE            PCM_DECIMATION_SIZE * 20
+#define PCM_BUFF_SIZE            PCM_DECIMATION_SIZE * 20
 
 /* Private variables ---------------------------------------------------------*/
 RCC_ClocksTypeDef RCC_Clocks;
 
 uint16_t CCR_Val = 1;
 
-static uint16_t InternalBuffer[INTERNAL_BUFF_SIZE];
+static uint16_t PDMBuffer[2][PDM_BUFF_SIZE];
+static enum bufstatus PDMBufStatus[2];
+static uint8_t PDMBufToWrite, PDMBufToProcess;
 
-static uint32_t InternalBufferSize = 0;
+static uint32_t PDMBufPos = 0;
 
 PDMFilter_InitStruct Filter;
 
-uint16_t RecBuf[PCM_OUT_SIZE];
+uint16_t PCMBuffer[PCM_BUFF_SIZE];
 
-float32_t RecBuff32[PCM_OUT_SIZE];
+uint16_t PCMBufPos = 0;
 
-uint16_t PCMBufOffset = 0;
-
-uint8_t CaptureComplete = 0;
 
 /* Private function prototypes -----------------------------------------------*/
 /* Private functions ---------------------------------------------------------*/
@@ -152,8 +159,10 @@ void WaveCaptureInit(void)
 
 void WaveCaptureStart(void)
 {
-	InternalBufferSize = 0;
-	PCMBufOffset = 0; 
+	PDMBufStatus[0] = PDMBufStatus[1] = UPDATING;
+	PDMBufPos = 0;
+	PDMBufToWrite = PDMBufToProcess = 0;
+	PCMBufPos = 0;
 	I2S_Cmd(SPI2, ENABLE);
 }
 
@@ -162,30 +171,13 @@ void WaveCaptureStop(void)
 	I2S_Cmd(SPI2, DISABLE);
 }
 
-float32_t FFTOutput[PCM_OUT_SIZE / 2];
-uint8_t RecognizeSignal(void)
+void ConvertPDMToPCM(uint16_t *PDMBuf, uint16_t *PCMBuf)
 {
-	uint16_t i;
-	arm_cfft_radix4_instance_f32 S; 
-	float32_t maxValue;
-	uint32_t indexOfMax;
+	uint16_t gain;
 
-	for (i = 0; i < PCM_OUT_SIZE; i++)
-	{
-		RecBuff32[i] = (float32_t) (RecBuf[i] - (1UL << 15)) / (float32_t) (1UL << 15);
-		//RecBuff32[i] = 10.0;// * (float32_t) (i % 2 ? 1 : -1);
-	}
-	arm_cfft_radix4_init_f32(&S, PCM_OUT_SIZE,  0, 1);
-	arm_cfft_radix4_f32(&S, RecBuff32);
-	arm_cmplx_mag_f32(RecBuff32, FFTOutput,  PCM_OUT_SIZE);
-	arm_max_f32(FFTOutput, PCM_OUT_SIZE, &maxValue, &indexOfMax);
-	
-	if (maxValue > 15 && 10 < indexOfMax && indexOfMax < 30)
-		return 1;
-	else
-		return 0;
+	gain = 50;
+	PDM_Filter_64_LSB((uint8_t *) PDMBuf, PCMBuf, gain, (PDMFilter_InitStruct *) &Filter);
 }
-
 int main(void)
 {
 	/* Initialize LEDS */
@@ -196,6 +188,7 @@ int main(void)
 
 	/* Green Led On: start of application */
 	STM_EVAL_LEDOn(LED4);
+	STM_EVAL_LEDOn(LED5);
 
 	/* SysTick end of count event each 10ms */
 	RCC_GetClocksFreq(&RCC_Clocks);
@@ -209,15 +202,34 @@ int main(void)
 
 	while (1)
 	{
-		if (CaptureComplete == 1)
+		if (PDMBufStatus[PDMBufToProcess] == UPDATED)
 		{
-			CaptureComplete = 0;
-			WaveCaptureStop();
+			uint16_t PCMBuf[PCM_DECIMATION_SIZE];
 
-			if (RecognizeSignal() == 1)
-				STM_EVAL_LEDToggle(LED4);
-			WaveCaptureStart();
+			STM_EVAL_LEDToggle(LED4);
+
+			PDMBufStatus[PDMBufToProcess] = PROCESSING;
+
+			//convert to PCM
+			ConvertPDMToPCM(PDMBuffer[PDMBufToProcess], PCMBuf);
+			PDMBufStatus[PDMBufToProcess] = PROCESSED;
+			PDMBufToProcess = (PDMBufToProcess + 1) % 2;
+
+			if (PCMBufPos >= PCM_BUFF_SIZE - 1)
+			{
+				// analyze the PCM date
+				STM_EVAL_LEDToggle(LED5);
+
+				PCMBufPos = 0;
+			}
+			else
+			{
+				memcpy(&PCMBuffer[PCMBufPos], PCMBuf, sizeof(PCMBuf));
+				PCMBufPos += sizeof(PCMBuf);
+			}
 		}
+
+		__WFI();
 	}
 
 	return 0;
@@ -225,29 +237,27 @@ int main(void)
 
 void SPI2_IRQHandler(void)
 {
-	u16 volume;
 	u16 app;
 
 	/* Check if data are available in SPI Data register */
 	if (SPI_GetITStatus(SPI2, SPI_I2S_IT_RXNE ) != RESET)
 	{
 		app = SPI_I2S_ReceiveData(SPI2 );
-		InternalBuffer[InternalBufferSize++] = HTONS(app);
-
-		/* Check to prevent overflow condition */
-		if (InternalBufferSize >= INTERNAL_BUFF_SIZE)
+		if (PDMBufStatus[PDMBufToWrite] != UPDATING)
 		{
-			InternalBufferSize = 0;
+			if (PDMBufStatus[PDMBufToWrite] == PROCESSED)
+				PDMBufStatus[PDMBufToWrite] = UPDATING;
+			else
+				return;	//overflow!
+		}
 
-			volume = 32;
+		PDMBuffer[PDMBufToWrite][PDMBufPos++] = HTONS(app);
 
-			PDM_Filter_64_LSB((uint8_t *) InternalBuffer, RecBuf + PCMBufOffset, volume, (PDMFilter_InitStruct *) &Filter);
-			PCMBufOffset += PCM_DECIMATION_SIZE;
-			if (PCMBufOffset == PCM_OUT_SIZE)
-			{
-				PCMBufOffset = 0;
-				CaptureComplete = 1;
-			}
+		if (PDMBufPos >= PDM_BUFF_SIZE)
+		{
+			PDMBufPos = 0;
+			PDMBufStatus[PDMBufToWrite] = UPDATED;
+			PDMBufToWrite = (PDMBufToWrite + 1) % 2;
 		}
 	}
 }

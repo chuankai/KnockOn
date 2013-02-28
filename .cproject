@@ -70,11 +70,7 @@
 								</option>
 								<option id="org.eclipse.cdt.cross.arm.gnu.c.link.option.libs.537972556" name="Libraries (-l)" superClass="org.eclipse.cdt.cross.arm.gnu.c.link.option.libs" valueType="libs">
 									<listOptionValue builtIn="false" value="PDMFilter_GCC"/>
-									<listOptionValue builtIn="false" value="m"/>
-									<listOptionValue builtIn="false" value="c"/>
-									<listOptionValue builtIn="false" value="gcc"/>
 								</option>
-								<option id="org.eclipse.cdt.cross.arm.gnu.c.link.option.ldflags.136847239" name="Linker flags (-Xlinker [option])" superClass="org.eclipse.cdt.cross.arm.gnu.c.link.option.ldflags"/>
 								<inputType id="org.eclipse.cdt.cross.arm.gnu.c.linker.input.1197127701" superClass="org.eclipse.cdt.cross.arm.gnu.c.linker.input">
 									<additionalInput kind="additionalinputdependency" paths="$(USER_OBJS)"/>
 									<additionalInput kind="additionalinput" paths="$(LIBS)"/>
@@ -326,44 +322,28 @@
 	<storageModule moduleId="cdtBuildSystem" version="4.0.0">
 		<project id="hello.org.eclipse.cdt.cross.arm.gnu.yagarto.macosx.elf.2049081173" name="ARM Cross Target Application" projectType="org.eclipse.cdt.cross.arm.gnu.yagarto.macosx.elf"/>
 	</storageModule>
-	<storageModule moduleId="refreshScope" versionNumber="2">
-		<configuration configurationName="Release">
-			<resource resourceType="PROJECT" workspacePath="/hello"/>
-		</configuration>
-		<configuration configurationName="Debug"/>
+	<storageModule moduleId="refreshScope" versionNumber="1">
+		<resource resourceType="PROJECT" workspacePath="/hello"/>
 	</storageModule>
 	<storageModule moduleId="org.eclipse.cdt.internal.ui.text.commentOwnerProjectMappings"/>
-	<storageModule moduleId="org.eclipse.cdt.core.LanguageSettingsProviders"/>
 	<storageModule moduleId="scannerConfiguration">
 		<autodiscovery enabled="true" problemReportingEnabled="true" selectedProfileId=""/>
 		<scannerConfigBuildInfo instanceId="org.eclipse.cdt.cross.arm.gnu.yagarto.macosx.elf.debug.1214824166;org.eclipse.cdt.cross.arm.gnu.yagarto.macosx.elf.debug.1214824166.734257632;org.eclipse.cdt.cross.arm.gnu.yagarto.macosx.elf.assembler.debug.821759578;org.eclipse.cdt.cross.arm.gnu.yagarto.macosx.assembler.base.input.245395897">
 			<autodiscovery enabled="true" problemReportingEnabled="true" selectedProfileId="org.eclipse.cdt.cross.arm.gnu.ARM_YG_GCCManagedMakePerProjectProfileC"/>
 		</scannerConfigBuildInfo>
-		<scannerConfigBuildInfo instanceId="org.eclipse.cdt.cross.arm.gnu.yagarto.macosx.elf.debug.1214824166;org.eclipse.cdt.cross.arm.gnu.yagarto.macosx.elf.debug.1214824166.140937732;org.eclipse.cdt.cross.arm.gnu.yagarto.macosx.elf.c.compiler.debug.650419919;org.eclipse.cdt.cross.arm.gnu.yagarto.macosx.c.compiler.base.input.1944514740">
-			<autodiscovery enabled="true" problemReportingEnabled="true" selectedProfileId="org.eclipse.cdt.cross.arm.gnu.ARM_YG_GCCManagedMakePerProjectProfileC"/>
-		</scannerConfigBuildInfo>
-		<scannerConfigBuildInfo instanceId="org.eclipse.cdt.cross.arm.gnu.yagarto.macosx.elf.debug.1214824166;org.eclipse.cdt.cross.arm.gnu.yagarto.macosx.elf.debug.1214824166.140937732;org.eclipse.cdt.cross.arm.gnu.yagarto.macosx.elf.assembler.debug.848181556;org.eclipse.cdt.cross.arm.gnu.yagarto.macosx.assembler.base.input.132997474">
+		<scannerConfigBuildInfo instanceId="org.eclipse.cdt.cross.arm.gnu.yagarto.macosx.elf.debug.1214824166;org.eclipse.cdt.cross.arm.gnu.yagarto.macosx.elf.debug.1214824166.;org.eclipse.cdt.cross.arm.gnu.yagarto.macosx.elf.assembler.debug.1901329355;org.eclipse.cdt.cross.arm.gnu.yagarto.macosx.assembler.base.input.707337220">
 			<autodiscovery enabled="true" problemReportingEnabled="true" selectedProfileId="org.eclipse.cdt.cross.arm.gnu.ARM_YG_GCCManagedMakePerProjectProfileC"/>
 		</scannerConfigBuildInfo>
 		<scannerConfigBuildInfo instanceId="org.eclipse.cdt.cross.arm.gnu.yagarto.macosx.elf.debug.1214824166;org.eclipse.cdt.cross.arm.gnu.yagarto.macosx.elf.debug.1214824166.1742995466;org.eclipse.cdt.cross.arm.gnu.yagarto.macosx.elf.assembler.debug.1692102782;org.eclipse.cdt.cross.arm.gnu.yagarto.macosx.assembler.base.input.988901692">
 			<autodiscovery enabled="true" problemReportingEnabled="true" selectedProfileId="org.eclipse.cdt.cross.arm.gnu.ARM_YG_GCCManagedMakePerProjectProfileC"/>
 		</scannerConfigBuildInfo>
-		<scannerConfigBuildInfo instanceId="org.eclipse.cdt.cross.arm.gnu.yagarto.macosx.elf.debug.1214824166;org.eclipse.cdt.cross.arm.gnu.yagarto.macosx.elf.debug.1214824166.1957905892;org.eclipse.cdt.cross.arm.gnu.yagarto.macosx.elf.assembler.debug.1085116461;org.eclipse.cdt.cross.arm.gnu.yagarto.macosx.assembler.base.input.2136173550">
-			<autodiscovery enabled="true" problemReportingEnabled="true" selectedProfileId="org.eclipse.cdt.cross.arm.gnu.ARM_YG_GCCManagedMakePerProjectProfileC"/>
-		</scannerConfigBuildInfo>
-		<scannerConfigBuildInfo instanceId="org.eclipse.cdt.cross.arm.gnu.yagarto.macosx.elf.debug.1214824166;org.eclipse.cdt.cross.arm.gnu.yagarto.macosx.elf.debug.1214824166.1957905892;org.eclipse.cdt.cross.arm.gnu.yagarto.macosx.elf.c.compiler.debug.1911395102;org.eclipse.cdt.cross.arm.gnu.yagarto.macosx.c.compiler.base.input.1748653844">
-			<autodiscovery enabled="true" problemReportingEnabled="true" selectedProfileId="org.eclipse.cdt.cross.arm.gnu.ARM_YG_GCCManagedMakePerProjectProfileC"/>
-		</scannerConfigBuildInfo>
-		<scannerConfigBuildInfo instanceId="org.eclipse.cdt.cross.arm.gnu.yagarto.macosx.elf.debug.1214824166;org.eclipse.cdt.cross.arm.gnu.yagarto.macosx.elf.debug.1214824166.734257632;org.eclipse.cdt.cross.arm.gnu.yagarto.macosx.elf.c.compiler.debug.742323116;org.eclipse.cdt.cross.arm.gnu.yagarto.macosx.c.compiler.base.input.1966390318">
-			<autodiscovery enabled="true" problemReportingEnabled="true" selectedProfileId="org.eclipse.cdt.cross.arm.gnu.ARM_YG_GCCManagedMakePerProjectProfileC"/>
-		</scannerConfigBuildInfo>
 		<scannerConfigBuildInfo instanceId="org.eclipse.cdt.cross.arm.gnu.yagarto.macosx.elf.debug.1214824166;org.eclipse.cdt.cross.arm.gnu.yagarto.macosx.elf.debug.1214824166.1742995466;org.eclipse.cdt.cross.arm.gnu.yagarto.macosx.elf.c.compiler.debug.1713118417;org.eclipse.cdt.cross.arm.gnu.yagarto.macosx.c.compiler.base.input.1201219815">
 			<autodiscovery enabled="true" problemReportingEnabled="true" selectedProfileId="org.eclipse.cdt.cross.arm.gnu.ARM_YG_GCCManagedMakePerProjectProfileC"/>
 		</scannerConfigBuildInfo>
-		<scannerConfigBuildInfo instanceId="org.eclipse.cdt.cross.arm.gnu.yagarto.macosx.elf.debug.1214824166;org.eclipse.cdt.cross.arm.gnu.yagarto.macosx.elf.debug.1214824166.71186403;org.eclipse.cdt.cross.arm.gnu.yagarto.macosx.elf.assembler.debug.1874081222;org.eclipse.cdt.cross.arm.gnu.yagarto.macosx.assembler.base.input.869616385">
+		<scannerConfigBuildInfo instanceId="org.eclipse.cdt.cross.arm.gnu.yagarto.macosx.elf.debug.1214824166;org.eclipse.cdt.cross.arm.gnu.yagarto.macosx.elf.debug.1214824166.671747179;org.eclipse.cdt.cross.arm.gnu.yagarto.macosx.elf.c.compiler.debug.333399053;org.eclipse.cdt.cross.arm.gnu.yagarto.macosx.c.compiler.base.input.792262391">
 			<autodiscovery enabled="true" problemReportingEnabled="true" selectedProfileId="org.eclipse.cdt.cross.arm.gnu.ARM_YG_GCCManagedMakePerProjectProfileC"/>
 		</scannerConfigBuildInfo>
-		<scannerConfigBuildInfo instanceId="org.eclipse.cdt.cross.arm.gnu.yagarto.macosx.elf.debug.1214824166;org.eclipse.cdt.cross.arm.gnu.yagarto.macosx.elf.debug.1214824166.671747179;org.eclipse.cdt.cross.arm.gnu.yagarto.macosx.elf.assembler.debug.294222300;org.eclipse.cdt.cross.arm.gnu.yagarto.macosx.assembler.base.input.1113708250">
+		<scannerConfigBuildInfo instanceId="org.eclipse.cdt.cross.arm.gnu.yagarto.macosx.elf.debug.1214824166;org.eclipse.cdt.cross.arm.gnu.yagarto.macosx.elf.debug.1214824166.621137110;org.eclipse.cdt.cross.arm.gnu.yagarto.macosx.elf.assembler.debug.1374514555;org.eclipse.cdt.cross.arm.gnu.yagarto.macosx.assembler.base.input.1086512834">
 			<autodiscovery enabled="true" problemReportingEnabled="true" selectedProfileId="org.eclipse.cdt.cross.arm.gnu.ARM_YG_GCCManagedMakePerProjectProfileC"/>
 		</scannerConfigBuildInfo>
 		<scannerConfigBuildInfo instanceId="org.eclipse.cdt.cross.arm.gnu.yagarto.macosx.elf.release.828935012;org.eclipse.cdt.cross.arm.gnu.yagarto.macosx.elf.release.828935012.;org.eclipse.cdt.cross.arm.gnu.yagarto.macosx.elf.assembler.release.1098675017;org.eclipse.cdt.cross.arm.gnu.yagarto.macosx.assembler.base.input.1458479073">
@@ -372,29 +352,42 @@
 		<scannerConfigBuildInfo instanceId="org.eclipse.cdt.cross.arm.gnu.yagarto.macosx.elf.debug.1214824166;org.eclipse.cdt.cross.arm.gnu.yagarto.macosx.elf.debug.1214824166.430008487;org.eclipse.cdt.cross.arm.gnu.yagarto.macosx.elf.c.compiler.debug.1445443204;org.eclipse.cdt.cross.arm.gnu.yagarto.macosx.c.compiler.base.input.1952117526">
 			<autodiscovery enabled="true" problemReportingEnabled="true" selectedProfileId="org.eclipse.cdt.cross.arm.gnu.ARM_YG_GCCManagedMakePerProjectProfileC"/>
 		</scannerConfigBuildInfo>
+		<scannerConfigBuildInfo instanceId="org.eclipse.cdt.cross.arm.gnu.yagarto.macosx.elf.release.828935012;org.eclipse.cdt.cross.arm.gnu.yagarto.macosx.elf.release.828935012.;org.eclipse.cdt.cross.arm.gnu.yagarto.macosx.elf.c.compiler.release.2140765213;org.eclipse.cdt.cross.arm.gnu.yagarto.macosx.c.compiler.base.input.1420300372">
+			<autodiscovery enabled="true" problemReportingEnabled="true" selectedProfileId="org.eclipse.cdt.cross.arm.gnu.ARM_YG_GCCManagedMakePerProjectProfileC"/>
+		</scannerConfigBuildInfo>
 		<scannerConfigBuildInfo instanceId="org.eclipse.cdt.cross.arm.gnu.yagarto.macosx.elf.debug.1214824166;org.eclipse.cdt.cross.arm.gnu.yagarto.macosx.elf.debug.1214824166.71186403;org.eclipse.cdt.cross.arm.gnu.yagarto.macosx.elf.c.compiler.debug.1153858773;org.eclipse.cdt.cross.arm.gnu.yagarto.macosx.c.compiler.base.input.1526993482">
 			<autodiscovery enabled="true" problemReportingEnabled="true" selectedProfileId="org.eclipse.cdt.cross.arm.gnu.ARM_YG_GCCManagedMakePerProjectProfileC"/>
 		</scannerConfigBuildInfo>
-		<scannerConfigBuildInfo instanceId="org.eclipse.cdt.cross.arm.gnu.yagarto.macosx.elf.debug.1214824166;org.eclipse.cdt.cross.arm.gnu.yagarto.macosx.elf.debug.1214824166.430008487;org.eclipse.cdt.cross.arm.gnu.yagarto.macosx.elf.assembler.debug.1570557701;org.eclipse.cdt.cross.arm.gnu.yagarto.macosx.assembler.base.input.1701292988">
+		<scannerConfigBuildInfo instanceId="org.eclipse.cdt.cross.arm.gnu.yagarto.macosx.elf.debug.1214824166;org.eclipse.cdt.cross.arm.gnu.yagarto.macosx.elf.debug.1214824166.734257632;org.eclipse.cdt.cross.arm.gnu.yagarto.macosx.elf.c.compiler.debug.742323116;org.eclipse.cdt.cross.arm.gnu.yagarto.macosx.c.compiler.base.input.1966390318">
 			<autodiscovery enabled="true" problemReportingEnabled="true" selectedProfileId="org.eclipse.cdt.cross.arm.gnu.ARM_YG_GCCManagedMakePerProjectProfileC"/>
 		</scannerConfigBuildInfo>
 		<scannerConfigBuildInfo instanceId="org.eclipse.cdt.cross.arm.gnu.yagarto.macosx.elf.debug.1214824166;org.eclipse.cdt.cross.arm.gnu.yagarto.macosx.elf.debug.1214824166.;org.eclipse.cdt.cross.arm.gnu.yagarto.macosx.elf.c.compiler.debug.639522422;org.eclipse.cdt.cross.arm.gnu.yagarto.macosx.c.compiler.base.input.1479937043">
 			<autodiscovery enabled="true" problemReportingEnabled="true" selectedProfileId="org.eclipse.cdt.cross.arm.gnu.ARM_YG_GCCManagedMakePerProjectProfileC"/>
 		</scannerConfigBuildInfo>
-		<scannerConfigBuildInfo instanceId="org.eclipse.cdt.cross.arm.gnu.yagarto.macosx.elf.debug.1214824166;org.eclipse.cdt.cross.arm.gnu.yagarto.macosx.elf.debug.1214824166.621137110;org.eclipse.cdt.cross.arm.gnu.yagarto.macosx.elf.assembler.debug.1374514555;org.eclipse.cdt.cross.arm.gnu.yagarto.macosx.assembler.base.input.1086512834">
+		<scannerConfigBuildInfo instanceId="org.eclipse.cdt.cross.arm.gnu.yagarto.macosx.elf.debug.1214824166;org.eclipse.cdt.cross.arm.gnu.yagarto.macosx.elf.debug.1214824166.140937732;org.eclipse.cdt.cross.arm.gnu.yagarto.macosx.elf.assembler.debug.848181556;org.eclipse.cdt.cross.arm.gnu.yagarto.macosx.assembler.base.input.132997474">
 			<autodiscovery enabled="true" problemReportingEnabled="true" selectedProfileId="org.eclipse.cdt.cross.arm.gnu.ARM_YG_GCCManagedMakePerProjectProfileC"/>
 		</scannerConfigBuildInfo>
-		<scannerConfigBuildInfo instanceId="org.eclipse.cdt.cross.arm.gnu.yagarto.macosx.elf.release.828935012;org.eclipse.cdt.cross.arm.gnu.yagarto.macosx.elf.release.828935012.;org.eclipse.cdt.cross.arm.gnu.yagarto.macosx.elf.c.compiler.release.2140765213;org.eclipse.cdt.cross.arm.gnu.yagarto.macosx.c.compiler.base.input.1420300372">
+		<scannerConfigBuildInfo instanceId="org.eclipse.cdt.cross.arm.gnu.yagarto.macosx.elf.debug.1214824166;org.eclipse.cdt.cross.arm.gnu.yagarto.macosx.elf.debug.1214824166.1957905892;org.eclipse.cdt.cross.arm.gnu.yagarto.macosx.elf.c.compiler.debug.1911395102;org.eclipse.cdt.cross.arm.gnu.yagarto.macosx.c.compiler.base.input.1748653844">
 			<autodiscovery enabled="true" problemReportingEnabled="true" selectedProfileId="org.eclipse.cdt.cross.arm.gnu.ARM_YG_GCCManagedMakePerProjectProfileC"/>
 		</scannerConfigBuildInfo>
-		<scannerConfigBuildInfo instanceId="org.eclipse.cdt.cross.arm.gnu.yagarto.macosx.elf.debug.1214824166;org.eclipse.cdt.cross.arm.gnu.yagarto.macosx.elf.debug.1214824166.671747179;org.eclipse.cdt.cross.arm.gnu.yagarto.macosx.elf.c.compiler.debug.333399053;org.eclipse.cdt.cross.arm.gnu.yagarto.macosx.c.compiler.base.input.792262391">
+		<scannerConfigBuildInfo instanceId="org.eclipse.cdt.cross.arm.gnu.yagarto.macosx.elf.debug.1214824166;org.eclipse.cdt.cross.arm.gnu.yagarto.macosx.elf.debug.1214824166.1957905892;org.eclipse.cdt.cross.arm.gnu.yagarto.macosx.elf.assembler.debug.1085116461;org.eclipse.cdt.cross.arm.gnu.yagarto.macosx.assembler.base.input.2136173550">
+			<autodiscovery enabled="true" problemReportingEnabled="true" selectedProfileId="org.eclipse.cdt.cross.arm.gnu.ARM_YG_GCCManagedMakePerProjectProfileC"/>
+		</scannerConfigBuildInfo>
+		<scannerConfigBuildInfo instanceId="org.eclipse.cdt.cross.arm.gnu.yagarto.macosx.elf.debug.1214824166;org.eclipse.cdt.cross.arm.gnu.yagarto.macosx.elf.debug.1214824166.140937732;org.eclipse.cdt.cross.arm.gnu.yagarto.macosx.elf.c.compiler.debug.650419919;org.eclipse.cdt.cross.arm.gnu.yagarto.macosx.c.compiler.base.input.1944514740">
 			<autodiscovery enabled="true" problemReportingEnabled="true" selectedProfileId="org.eclipse.cdt.cross.arm.gnu.ARM_YG_GCCManagedMakePerProjectProfileC"/>
 		</scannerConfigBuildInfo>
 		<scannerConfigBuildInfo instanceId="org.eclipse.cdt.cross.arm.gnu.yagarto.macosx.elf.debug.1214824166;org.eclipse.cdt.cross.arm.gnu.yagarto.macosx.elf.debug.1214824166.621137110;org.eclipse.cdt.cross.arm.gnu.yagarto.macosx.elf.c.compiler.debug.376044622;org.eclipse.cdt.cross.arm.gnu.yagarto.macosx.c.compiler.base.input.1298619580">
 			<autodiscovery enabled="true" problemReportingEnabled="true" selectedProfileId="org.eclipse.cdt.cross.arm.gnu.ARM_YG_GCCManagedMakePerProjectProfileC"/>
 		</scannerConfigBuildInfo>
-		<scannerConfigBuildInfo instanceId="org.eclipse.cdt.cross.arm.gnu.yagarto.macosx.elf.debug.1214824166;org.eclipse.cdt.cross.arm.gnu.yagarto.macosx.elf.debug.1214824166.;org.eclipse.cdt.cross.arm.gnu.yagarto.macosx.elf.assembler.debug.1901329355;org.eclipse.cdt.cross.arm.gnu.yagarto.macosx.assembler.base.input.707337220">
+		<scannerConfigBuildInfo instanceId="org.eclipse.cdt.cross.arm.gnu.yagarto.macosx.elf.debug.1214824166;org.eclipse.cdt.cross.arm.gnu.yagarto.macosx.elf.debug.1214824166.430008487;org.eclipse.cdt.cross.arm.gnu.yagarto.macosx.elf.assembler.debug.1570557701;org.eclipse.cdt.cross.arm.gnu.yagarto.macosx.assembler.base.input.1701292988">
+			<autodiscovery enabled="true" problemReportingEnabled="true" selectedProfileId="org.eclipse.cdt.cross.arm.gnu.ARM_YG_GCCManagedMakePerProjectProfileC"/>
+		</scannerConfigBuildInfo>
+		<scannerConfigBuildInfo instanceId="org.eclipse.cdt.cross.arm.gnu.yagarto.macosx.elf.debug.1214824166;org.eclipse.cdt.cross.arm.gnu.yagarto.macosx.elf.debug.1214824166.71186403;org.eclipse.cdt.cross.arm.gnu.yagarto.macosx.elf.assembler.debug.1874081222;org.eclipse.cdt.cross.arm.gnu.yagarto.macosx.assembler.base.input.869616385">
+			<autodiscovery enabled="true" problemReportingEnabled="true" selectedProfileId="org.eclipse.cdt.cross.arm.gnu.ARM_YG_GCCManagedMakePerProjectProfileC"/>
+		</scannerConfigBuildInfo>
+		<scannerConfigBuildInfo instanceId="org.eclipse.cdt.cross.arm.gnu.yagarto.macosx.elf.debug.1214824166;org.eclipse.cdt.cross.arm.gnu.yagarto.macosx.elf.debug.1214824166.671747179;org.eclipse.cdt.cross.arm.gnu.yagarto.macosx.elf.assembler.debug.294222300;org.eclipse.cdt.cross.arm.gnu.yagarto.macosx.assembler.base.input.1113708250">
 			<autodiscovery enabled="true" problemReportingEnabled="true" selectedProfileId="org.eclipse.cdt.cross.arm.gnu.ARM_YG_GCCManagedMakePerProjectProfileC"/>
 		</scannerConfigBuildInfo>
 	</storageModule>
+	<storageModule moduleId="org.eclipse.cdt.core.LanguageSettingsProviders"/>
 </cproject>
